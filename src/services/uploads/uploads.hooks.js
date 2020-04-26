@@ -7,17 +7,18 @@ module.exports = {
     find: [],
     get: [],
     create: [
-      function(context) {
+      function (context) {
+        console.log(context);
         if (!context.data.uri && context.params.file) {
           const file = context.params.file;
           const uri = dauria.getBase64DataURI(file.buffer, file.mimetype);
           context.data = { uri: uri };
         }
-      }
+      },
     ],
     update: [],
     patch: [],
-    remove: []
+    remove: [],
   },
 
   after: {
@@ -27,7 +28,7 @@ module.exports = {
     create: [],
     update: [],
     patch: [],
-    remove: []
+    remove: [],
   },
 
   error: {
@@ -37,6 +38,6 @@ module.exports = {
     create: [],
     update: [],
     patch: [],
-    remove: []
-  }
+    remove: [],
+  },
 };

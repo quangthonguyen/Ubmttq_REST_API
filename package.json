@@ -48,6 +48,7 @@
     "feathers-mailer": "^3.0.1",
     "feathers-mongodb": "^6.1.0",
     "fs-blob-store": "^5.2.1",
+    "google-drive-blobs": "^4.0.0",
     "helmet": "^3.21.2",
     "mongodb": "^3.5.2",
     "mongodb-core": "^3.2.7",

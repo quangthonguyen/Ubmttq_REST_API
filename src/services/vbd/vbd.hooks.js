@@ -28,6 +28,7 @@ module.exports = {
           if (Date.parse(context.result.data[index].thoiHan) - now <= 0) {
             context.result.data[index].trangThai = "Hết hạn";
             context.result.data[index].custom = "Hết hạn";
+            context.result.data[index].notificationQLCV = false;
           }
           context.result.data[index].custom =
             context.result.data[index].trangThai;
