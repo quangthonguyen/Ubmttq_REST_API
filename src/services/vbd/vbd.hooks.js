@@ -8,18 +8,18 @@ module.exports = {
     create: [],
     update: [],
     patch: [],
-    remove: []
+    remove: [],
   },
 
   after: {
     all: [],
     find: [
-      async context => {
+      async (context) => {
         let now = Date.now();
         for (let index = 0; index < context.result.data.length; index++) {
           if (
-            Date.parse(context.result.data[index].thoiHan) - now <=
-            172800000
+            Date.parse(context.result.data[index].thoiHan) - now <= 172800000 &&
+            context.result.data[index].trangThai !== "Hoàn thành"
           ) {
             context.result.data[index].trangThai = "Gần hết hạn";
             context.result.data[index].custom = "Gần hết hạn";
@@ -35,18 +35,18 @@ module.exports = {
         }
 
         return context;
-      }
+      },
     ],
     get: [],
     create: [
-      async context => {
+      async (context) => {
         context.result.custom = context.result.trangThai;
         return context;
-      }
+      },
     ],
     update: [],
     patch: [],
-    remove: []
+    remove: [],
   },
 
   error: {
@@ -56,6 +56,6 @@ module.exports = {
     create: [],
     update: [],
     patch: [],
-    remove: []
-  }
+    remove: [],
+  },
 };
